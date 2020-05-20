@@ -6,82 +6,79 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var Link = ReactRouterDOM.Link;
+var Route = ReactRouterDOM.Route;
+
 var ReactFirebaseFileUpload = function (_React$Component) {
   _inherits(ReactFirebaseFileUpload, _React$Component);
 
   function ReactFirebaseFileUpload() {
-    var _ref;
-
-    var _temp, _this, _ret;
-
     _classCallCheck(this, ReactFirebaseFileUpload);
 
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ReactFirebaseFileUpload.__proto__ || Object.getPrototypeOf(ReactFirebaseFileUpload)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      posts: []
-    }, _this.getProducts = function () {
-      axios.post('/data').then(function (response) {
-        var posts = response.data;
-        _this.setState({ posts: posts.data });
-      }).catch(function () {
-        console.log('Something wrong');
-      });
-    }, _this.disPlay = function (posts) {
-      if (!posts.length) return null;
-      return posts.map(function (post, index) {
-        return React.createElement(
-          'div',
-          { 'class': 'data', key: index },
-          React.createElement(
-            'p',
-            null,
-            post.stt_user
-          ),
-          React.createElement(
-            'p',
-            null,
-            post.id_user
-          ),
-          React.createElement(
-            'p',
-            null,
-            post.user_name
-          ),
-          React.createElement(
-            'p',
-            null,
-            post.password
-          ),
-          React.createElement(
-            'p',
-            null,
-            post.gmail_user
-          ),
-          React.createElement(
-            'p',
-            null,
-            post.date_user
-          )
-        );
-      });
-    }, _temp), _possibleConstructorReturn(_this, _ret);
+    return _possibleConstructorReturn(this, (ReactFirebaseFileUpload.__proto__ || Object.getPrototypeOf(ReactFirebaseFileUpload)).apply(this, arguments));
   }
 
   _createClass(ReactFirebaseFileUpload, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.getProducts();
-    }
-  }, {
-    key: 'render',
+    key: "render",
     value: function render() {
+      var Home = function Home(props) {
+        return React.createElement(
+          "h1",
+          null,
+          "HOME"
+        );
+      };
+      var A = function A(props) {
+        return React.createElement(
+          "h1",
+          null,
+          "A"
+        );
+      };
+      var B = function B(props) {
+        return React.createElement(
+          "h1",
+          null,
+          "B"
+        );
+      };
       return React.createElement(
-        'div',
-        { 'class': 'sjkdias' },
-        this.disPlay(this.state.posts)
+        ReactRouterDOM.HashRouter,
+        null,
+        React.createElement(
+          "ul",
+          null,
+          React.createElement(
+            "li",
+            null,
+            React.createElement(
+              Link,
+              { to: "/" },
+              "TO HOME"
+            )
+          ),
+          React.createElement(
+            "li",
+            null,
+            React.createElement(
+              Link,
+              { to: "/a" },
+              "TO A"
+            )
+          ),
+          React.createElement(
+            "li",
+            null,
+            React.createElement(
+              Link,
+              { to: "/b" },
+              "TO B"
+            )
+          )
+        ),
+        React.createElement(Route, { path: "/", exact: true, component: Home }),
+        React.createElement(Route, { path: "/a", component: A }),
+        React.createElement(Route, { path: "/b", component: B })
       );
     }
   }]);

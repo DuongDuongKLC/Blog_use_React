@@ -1,3 +1,4 @@
+const Link = ReactRouterDOM.Link;
 export default class Upload_status extends React.Component {
     url = {
     }
@@ -25,7 +26,7 @@ export default class Upload_status extends React.Component {
                 <div class="item_main wcalc(calcpc350) h-100 float-right h-100">
                     <div class="title_item h(50) w-100 bdc-bt(Black) rounded">
                         <div class="title_child h(100pc) wcalc(calcpc200) float-left">
-                            <a href={status.stt_status} class="ff(Lemon) c(Black) fz(15) font-weight-bold float-left pt-sm-3 pl-5 hov(c-Black):h"> {status.title_status} </a>
+                            <Link to={`/bai-viet/${status.stt_status}`} class="ff(Lemon) c(Black) fz(15) font-weight-bold float-left pt-sm-3 pl-5 hov(c-Black):h"> {status.title_status} </Link>
                         </div>
                         <div class="klc_sake w(200) h-100 float-right">
                             <div class="info_sake h-100">

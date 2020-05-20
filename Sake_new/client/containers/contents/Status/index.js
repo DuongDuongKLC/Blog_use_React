@@ -6,10 +6,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-import { Header } from '../../../components/Header/index.js';
-import { Item_menu, Title_main } from '../../../components/Middle/items/index.js';
-import { End } from '../../../components/End/index.js';
-
 var Status = function (_React$Component) {
     _inherits(Status, _React$Component);
 
@@ -25,12 +21,12 @@ var Status = function (_React$Component) {
         }
 
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Status.__proto__ || Object.getPrototypeOf(Status)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-            data_status: []
+            data_status: [],
+            data: []
         }, _this.getStatus = function () {
             axios.post('/data_status').then(function (response) {
                 var data_status = response.data;
-                var data_show = data_status.data[4];
-                _this.setState({ data_status: [data_show] });
+                _this.setState({ data_status: [data_status.data[0]] });
             }).catch(function () {
                 console.log('something wrong');
             });
@@ -52,13 +48,11 @@ var Status = function (_React$Component) {
                                 React.createElement(
                                     'div',
                                     { 'class': 'w(300) float-left ml-5' },
-                                    React.createElement('img', { src: '/bai_viet', 'class': 'h(40) w(40) float-left mt-1 ml-2 rounded-circle bdc(Black)', alt: '', srcset: '' }),
+                                    React.createElement('img', { src: sta.url_picture, 'class': 'h(40) w(40) float-left mt-1 ml-2 rounded-circle bdc(Black)', alt: '', srcset: '' }),
                                     React.createElement(
                                         'a',
                                         { 'class': 'ff(Lemon) c(Black) fz(15) font-weight-bold pt-3 hov(c-Black):h float-right' },
-                                        ' ',
-                                        sta.title_status,
-                                        ' '
+                                        sta.title_status
                                     )
                                 )
                             ),
@@ -129,18 +123,15 @@ var Status = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
+
             return React.createElement(
                 'div',
-                { 'class': 'middle_main h(30ph) container-fluid' },
-                React.createElement(Header, null),
-                React.createElement(Item_menu, null),
-                React.createElement(Title_main, null),
+                { 'class': 'middle_main' },
                 React.createElement(
                     'div',
                     { 'class': 'data_status1 bdc(Black) ml-5 mr-5 mt-2' },
                     this.disPlay(this.state.data_status)
-                ),
-                React.createElement(End, null)
+                )
             );
         }
     }]);

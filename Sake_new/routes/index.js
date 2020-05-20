@@ -11,9 +11,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: ' Blog Kẻ Lắm Chuyện' });
 });
 // upload status file
-router.get('/bai_viet', function(req, res, next) {
-  res.render('data_status', { title: 'Thresh - Cai ngục xiềng xích' });
-});
 //............................abs
 
 router.post('/data_status', function(req, res, next){

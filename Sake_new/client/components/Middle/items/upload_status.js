@@ -6,6 +6,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var Link = ReactRouterDOM.Link;
+
 var Upload_status = function (_React$Component) {
     _inherits(Upload_status, _React$Component);
 
@@ -46,8 +48,8 @@ var Upload_status = function (_React$Component) {
                                 'div',
                                 { 'class': 'title_child h(100pc) wcalc(calcpc200) float-left' },
                                 React.createElement(
-                                    'a',
-                                    { href: status.stt_status, 'class': 'ff(Lemon) c(Black) fz(15) font-weight-bold float-left pt-sm-3 pl-5 hov(c-Black):h' },
+                                    Link,
+                                    { to: '/bai-viet/' + status.stt_status, 'class': 'ff(Lemon) c(Black) fz(15) font-weight-bold float-left pt-sm-3 pl-5 hov(c-Black):h' },
                                     ' ',
                                     status.title_status,
                                     ' '
