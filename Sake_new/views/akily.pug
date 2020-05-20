@@ -1,0 +1,16 @@
+extends layout
+
+mixin display(data)
+    each item in data
+        .id(class="jasggd")
+            a(href="" class="display")=item.id_user
+        .user_name
+            a(href="" )=item.user_name
+        .password
+            a(href="")=item.password
+        hr
+block content
+    .hearder
+    .body
+        .show_data
+            +display(data)

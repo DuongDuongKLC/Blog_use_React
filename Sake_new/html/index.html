@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="index_uploads"></div>
+    <div id="index_event"></div>
+    <div id="uploads"></div>
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-firestore.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDmxXE0dTi9iMzZ_o2_fj3G6nMuEsd2F9g",
+            authDomain: "data-c06b4.firebaseapp.com",
+            databaseURL: "https://data-c06b4.firebaseio.com",
+            projectId: "data-c06b4",
+            storageBucket: "data-c06b4.appspot.com",
+            messagingSenderId: "862979826542",
+            appId: "1:862979826542:web:1d36b0f885bf3cde24d77f",
+            measurementId: "G-578SPT8H7P"
+        };
+        var defaultProject = firebase.initializeApp(firebaseConfig);
+
+        console.log(defaultProject.name);  // "[DEFAULT]"
+
+        // Option 1: Access Firebase services via the defaultProject variable
+        var defaultStorage = defaultProject.storage();
+        var defaultFirestore = defaultProject.firestore();
+    </script>
+    <script src="uploads.js" type="module"></script>
+</body>
+</html>

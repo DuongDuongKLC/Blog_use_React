@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../scss/respon_sake.scss"
+    ],
+    "names": [],
+    "file": "respon_sake.css"
+}
