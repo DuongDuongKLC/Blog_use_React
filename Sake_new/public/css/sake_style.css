@@ -2021,7 +2021,53 @@
   right: 100px;
   top: 100px;
 }
-
+.ty\(10k\) {right: -10px;top: 0px;}
+.ty\(20k\) {right: -20px;top: 0px;}
+.ty\(30k\) {right: -30px;top: 0px;}
+.ty\(40k\) {right: -40px;top: 0px;}
+.ty\(50k\) {right: -50px;top: 0px;}
+.ty\(60k\) {right: -60px;top: 0px;}
+.ty\(70k\) {right: -70px;top: 0px;}
+.ty\(80k\) {right: -80px;top: 0px;}
+.ty\(90k\) {right: -90px;top: 0px;}
+.ty\(100k\) {right: -100px;top: 0px;}
+.ty\(200k\) {right: -200px;top: 0px;}
+.ty\(300k\) {right: -300px;top: 0px;}
+.ty\(400k\) {right: -400px;top: 0px;}
+.ty\(500k\) {right: -500px;top: 0px;}
+.ty\(600k\) {right: -600px;top: 0px;}
+.ty\(700k\) {right: -700px;top: 0px;}
+.ty\(800k\) {right: -800px;top: 0px;}
+.ty\(900k\) {right: -900px;top: 0px;}
+.tx\(0k\) {left: 0px;top: 0px;}
+.tx\(10k\) {left: -10px;top: 0px;}
+.tx\(20k\) {left: -20px;top: 0px;}
+.tx\(30k\) {left: -30px;top: 0px;}
+.tx\(40k\) {left: -40px;top: 0px;}
+.tx\(50k\) {left: -50px;top: 0px;}
+.tx\(60k\) {left: -60px;top: 0px;}
+.tx\(70k\) {left: -70px;top: 0px;}
+.tx\(80k\) {left: -80px;top: 0px;}
+.tx\(90k\) {left: -90px;top: 0px;}
+.tx\(100k\) {left: -100px;top: 0px;}
+.tx\(200k\) {left: -200px;top: 0px;}
+.tx\(300k\) {left: -300px;top: 0px;}
+.tx\(400k\) {left: -400px;top: 0px;}
+.tx\(500k\) {left: -500px;top: 0px;}
+.tx\(600k\) {left: -600px;top: 0px;}
+.tx\(700k\) {left: -700px;top: 0px;}
+.tx\(800k\) {left: -800px;top: 0px;}
+.tx\(900k\) {left: -900px;top: 0px;}
+.ttop\(10kpc\) {top: -10%;left: 0px;}
+.ttop\(20kpc\) {top: -20%;left: 0px;}
+.ttop\(30kpc\) {top: -30%;left: 0px;}
+.ttop\(40kpc\) {top: -40%;left: 0px;}
+.ttop\(50kpc\) {top: -50%;left: 0px;}
+.ttop\(60kpc\) {top: -60%;left: 0px;}
+.ttop\(70kpc\) {top: -70%;left: 0px;}
+.ttop\(80kpc\) {top: -80%;left: 0px;}
+.ttop\(90kpc\) {top: -90%;left: 0px;}
+.ttop\(100kpc\) {top: -100%;left: 0px;}
 .tybot\(0\) {
   right: 0px;
   bottom: 0px;

@@ -1,3 +1,5 @@
+var Link = ReactRouterDOM.Link;
+var Route = ReactRouterDOM.Route;
 export var Item_menu = function Item_menu(pops) {
     return React.createElement(
         "div",
@@ -9,17 +11,17 @@ export var Item_menu = function Item_menu(pops) {
                 "div",
                 { className: "item row h(5ph) w(95pc)" },
                 React.createElement(
-                    "a",
-                    { href: "http://" },
-                    " Chuy\xEA\u0323n ha\u0300ng nga\u0300y cu\u0309a t\xF4\u0300i"
+                    Link,
+                    { to: "/chuyen-hang-ngay" },
+                    " Chuy\xEA\u0323n ha\u0300ng nga\u0300y cu\u0309a t\xF4\u0300i "
                 )
             ),
             React.createElement(
                 "div",
                 { className: "item row h(5ph) bdc-t(Black) w(90pc)" },
                 React.createElement(
-                    "a",
-                    { href: "http://" },
+                    Link,
+                    { to: "/kali-linux" },
                     " H\xEA\u0323 \u0111i\xEA\u0300u ha\u0300nh kali linux"
                 )
             ),
@@ -27,8 +29,8 @@ export var Item_menu = function Item_menu(pops) {
                 "div",
                 { className: "item row h(5ph) bdc-t(Black) w(85pc)" },
                 React.createElement(
-                    "a",
-                    { href: "http://" },
+                    Link,
+                    { to: "/khoa-hoc-doi-song" },
                     " Khoa ho\u0323c va\u0300 \u0111\u01A1\u0300i s\xF4\u0301ng "
                 )
             ),
@@ -36,8 +38,8 @@ export var Item_menu = function Item_menu(pops) {
                 "div",
                 { className: "item row h(5ph) bdc-t(Black) w(80pc)" },
                 React.createElement(
-                    "a",
-                    { href: "http://" },
+                    Link,
+                    { to: "/thien-nhien" },
                     " Thi\xEAn nhi\xEAn th\xE2\u0323t ki\u0300 thu\u0301  "
                 )
             ),
@@ -45,8 +47,8 @@ export var Item_menu = function Item_menu(pops) {
                 "div",
                 { className: "item row h(5ph) bdc-t(Black) w(75pc)" },
                 React.createElement(
-                    "a",
-                    { href: "http://" },
+                    Link,
+                    { to: "/mau-truyen-ngan" },
                     " Nh\u01B0\u0303ng m\xE2\u0303u chuy\xEA\u0323n ng\u0103\u0301n "
                 )
             ),
@@ -54,8 +56,8 @@ export var Item_menu = function Item_menu(pops) {
                 "div",
                 { className: "item row h(5ph) bdc-t(Black) w(70pc)" },
                 React.createElement(
-                    "a",
-                    { href: "http://" },
+                    Link,
+                    { to: "/game-gai" },
                     " Ga\u0301i va\u0300 game  "
                 )
             )

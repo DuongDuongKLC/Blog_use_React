@@ -1,7 +1,5 @@
 const Link = ReactRouterDOM.Link;
-export default class Upload_status extends React.Component {
-    url = {
-    }
+export default class Content extends React.Component {
     state = {
         data_status : []
     }
@@ -26,7 +24,7 @@ export default class Upload_status extends React.Component {
                 <div class="item_main wcalc(calcpc350) h-100 float-right h-100">
                     <div class="title_item h(50) w-100 bdc-bt(Black) rounded">
                         <div class="title_child h(100pc) wcalc(calcpc200) float-left overflow-hidden">
-                            <Link to={`/bai-viet/${status.stt_status}`} class="ff(Lemon) c(Black) fz(15) font-weight-bold float-left pt-sm-3 pl-5 hov(c-Black):h"> {status.title_status} </Link>
+                            <Link to={`/chuyen-hang-ngay/${status.stt_status}`} class="ff(Lemon) c(Black) fz(15) font-weight-bold float-left pt-sm-3 pl-5 hov(c-Black):h"> {status.title_status} </Link>
                         </div>
                         <div class="klc_sake w(200) h-100 float-right">
                             <div class="info_sake h-100">
@@ -59,10 +57,12 @@ export default class Upload_status extends React.Component {
         ));
     }
     render(){
+        var content = this.state.data_status.filter((item)=> item.ma_status == 33)
+        
         return(
             <div class="main_body_status w-100">
                 <div class="main ml-5 mr-5 mt-2 bdc(Black) pb-4 rounded">
-                    {this.disPlayStatus(this.state.data_status)}
+                    {this.disPlayStatus(content)}
                 </div>
             </div>
         )

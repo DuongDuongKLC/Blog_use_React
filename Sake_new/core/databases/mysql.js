@@ -17,5 +17,6 @@ database.prototype = {
             callback(result);
         })
     }
+    
 }
 module.exports = database;

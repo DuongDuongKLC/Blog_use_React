@@ -1,24 +1,26 @@
+const Link = ReactRouterDOM.Link;
+const Route = ReactRouterDOM.Route;
 export const Item_menu = (pops) => {
     return(
         <div class="item_menu h(100pc) bdc(Black) bg-white ml-5 mr-5 overflow-hidden position-relative">
             <div class="left_menu w(40pc) h-100 position-absolute tx(0) z(5)">
                 <div className="item row h(5ph) w(95pc)">
-                    <a href="http://"> Chuyện hàng ngày của tồi</a>
+                    <Link to="/chuyen-hang-ngay"> Chuyện hàng ngày của tồi </Link>
                 </div>
                 <div className="item row h(5ph) bdc-t(Black) w(90pc)">
-                    <a href="http://"> Hệ điều hành kali linux</a>
+                    <Link to="/kali-linux"> Hệ điều hành kali linux</Link>
                 </div>
                 <div className="item row h(5ph) bdc-t(Black) w(85pc)">
-                    <a href="http://"> Khoa học và đời sống </a>
+                    <Link to="/khoa-hoc-doi-song"> Khoa học và đời sống </Link>
                 </div>
                 <div className="item row h(5ph) bdc-t(Black) w(80pc)">
-                    <a href="http://"> Thiên nhiên thật kì thú  </a>
+                    <Link to="/thien-nhien"> Thiên nhiên thật kì thú  </Link>
                 </div>
                 <div className="item row h(5ph) bdc-t(Black) w(75pc)">
-                    <a href="http://"> Những mẫu chuyện ngắn </a>
+                    <Link to="/mau-truyen-ngan"> Những mẫu chuyện ngắn </Link>
                 </div>
                 <div className="item row h(5ph) bdc-t(Black) w(70pc)">
-                    <a href="http://"> Gái và game  </a>
+                    <Link to="/game-gai"> Gái và game  </Link>
                 </div>
             </div>
             <div class="right_menu w(75pc) h-100 position-absolute ty(0)">

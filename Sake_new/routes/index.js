@@ -13,6 +13,7 @@ router.get('/', function(req, res, next) {
 // upload status file
 //............................abs
 
+
 router.post('/data_status', function(req, res, next){
   db.get_status(function(result){
     res.json({data: result})
@@ -24,4 +25,7 @@ router.post('/data', function(req, res, next){
     res.json({data: result})
   })
 })
+
+
+
 module.exports = router;

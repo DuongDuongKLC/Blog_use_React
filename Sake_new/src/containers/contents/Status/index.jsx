@@ -1,16 +1,16 @@
+const Route = ReactRouterDOM.Route;
 export default class Status extends React.Component {
     state = {
         data_status:[],
-        data : []
     }
     componentDidMount(){
-        this.getStatus();
+        this.getStatus(0);
     }
-    getStatus = () =>{
+    getStatus = (n) =>{
         axios.post('/data_status')
             .then((response)=>{
                 const data_status = response.data;
-                this.setState({data_status: [data_status.data[0]]})
+                this.setState({data_status: data_status.data})
             })
             .catch(()=>{
                 console.log('something wrong');
@@ -56,11 +56,59 @@ export default class Status extends React.Component {
         ));
     }
     render(){
-
+        var st5 = this.state.data_status.filter((item)=> item.stt_status == 5);
+        var st4 = this.state.data_status.filter((item)=> item.stt_status == 4);
+        var st3 = this.state.data_status.filter((item)=> item.stt_status == 3);
+        var st2 = this.state.data_status.filter((item)=> item.stt_status == 2);
+        var st1 = this.state.data_status.filter((item)=> item.stt_status == 1);
+        const U5 = ()=>{
+            return(
+                <div>
+                    {this.disPlay(st5)}
+                </div>
+            )
+        }
+        const U4 = ()=>{
+            return(
+                <div>
+                    {this.disPlay(st4)}
+                </div>
+            )
+        }
+        const U3 = ()=>{
+            return(
+                <div>
+                    {this.disPlay(st3)}
+                </div>
+            )
+        }
+        const U2 = ()=>{
+            return(
+                <div>
+                    {this.disPlay(st2)}
+                </div>
+            )
+        }
+        const U1 = ()=>{
+            return(
+                <div>
+                    {this.disPlay(st1)}
+                </div>
+            )
+        }
         return(
             <div class="middle_main">
                 <div class="data_status1 bdc(Black) ml-5 mr-5 mt-2">
-                    {this.disPlay(this.state.data_status)}
+                <Route path="/bai-viet/5" component={U5}>
+                </Route>
+                <Route path="/bai-viet/4" component={U4}>
+                </Route>
+                <Route path="/bai-viet/3" component={U3}>
+                </Route>
+                <Route path="/bai-viet/2" component={U2}>
+                </Route>
+                <Route path="/bai-viet/1" component={U1}>
+                </Route>
                 </div>
             </div>
         )

@@ -8,21 +8,21 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var Link = ReactRouterDOM.Link;
 
-var Upload_status = function (_React$Component) {
-    _inherits(Upload_status, _React$Component);
+var Content = function (_React$Component) {
+    _inherits(Content, _React$Component);
 
-    function Upload_status() {
+    function Content() {
         var _ref;
 
         var _temp, _this, _ret;
 
-        _classCallCheck(this, Upload_status);
+        _classCallCheck(this, Content);
 
         for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Upload_status.__proto__ || Object.getPrototypeOf(Upload_status)).call.apply(_ref, [this].concat(args))), _this), _this.url = {}, _this.state = {
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Content.__proto__ || Object.getPrototypeOf(Content)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
             data_status: []
         }, _this.getStatus = function () {
             axios.post('/data_status').then(function (response) {
@@ -49,7 +49,7 @@ var Upload_status = function (_React$Component) {
                                 { 'class': 'title_child h(100pc) wcalc(calcpc200) float-left overflow-hidden' },
                                 React.createElement(
                                     Link,
-                                    { to: '/bai-viet/' + status.stt_status, 'class': 'ff(Lemon) c(Black) fz(15) font-weight-bold float-left pt-sm-3 pl-5 hov(c-Black):h' },
+                                    { to: '/chuyen-hang-ngay/' + status.stt_status, 'class': 'ff(Lemon) c(Black) fz(15) font-weight-bold float-left pt-sm-3 pl-5 hov(c-Black):h' },
                                     ' ',
                                     status.title_status,
                                     ' '
@@ -128,7 +128,7 @@ var Upload_status = function (_React$Component) {
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
-    _createClass(Upload_status, [{
+    _createClass(Content, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
             this.getStatus();
@@ -136,19 +136,23 @@ var Upload_status = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
+            var content = this.state.data_status.filter(function (item) {
+                return item.ma_status == 33;
+            });
+
             return React.createElement(
                 'div',
                 { 'class': 'main_body_status w-100' },
                 React.createElement(
                     'div',
                     { 'class': 'main ml-5 mr-5 mt-2 bdc(Black) pb-4 rounded' },
-                    this.disPlayStatus(this.state.data_status)
+                    this.disPlayStatus(content)
                 )
             );
         }
     }]);
 
-    return Upload_status;
+    return Content;
 }(React.Component);
 
-export default Upload_status;
+export default Content;

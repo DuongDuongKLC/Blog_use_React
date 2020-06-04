@@ -6,6 +6,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var Route = ReactRouterDOM.Route;
+
 var Status = function (_React$Component) {
     _inherits(Status, _React$Component);
 
@@ -21,12 +23,11 @@ var Status = function (_React$Component) {
         }
 
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Status.__proto__ || Object.getPrototypeOf(Status)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-            data_status: [],
-            data: []
-        }, _this.getStatus = function () {
+            data_status: []
+        }, _this.getStatus = function (n) {
             axios.post('/data_status').then(function (response) {
                 var data_status = response.data;
-                _this.setState({ data_status: [data_status.data[0]] });
+                _this.setState({ data_status: data_status.data });
             }).catch(function () {
                 console.log('something wrong');
             });
@@ -118,19 +119,74 @@ var Status = function (_React$Component) {
     _createClass(Status, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            this.getStatus();
+            this.getStatus(0);
         }
     }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
 
+            var st5 = this.state.data_status.filter(function (item) {
+                return item.stt_status == 5;
+            });
+            var st4 = this.state.data_status.filter(function (item) {
+                return item.stt_status == 4;
+            });
+            var st3 = this.state.data_status.filter(function (item) {
+                return item.stt_status == 3;
+            });
+            var st2 = this.state.data_status.filter(function (item) {
+                return item.stt_status == 2;
+            });
+            var st1 = this.state.data_status.filter(function (item) {
+                return item.stt_status == 1;
+            });
+            var U5 = function U5() {
+                return React.createElement(
+                    'div',
+                    null,
+                    _this2.disPlay(st5)
+                );
+            };
+            var U4 = function U4() {
+                return React.createElement(
+                    'div',
+                    null,
+                    _this2.disPlay(st4)
+                );
+            };
+            var U3 = function U3() {
+                return React.createElement(
+                    'div',
+                    null,
+                    _this2.disPlay(st3)
+                );
+            };
+            var U2 = function U2() {
+                return React.createElement(
+                    'div',
+                    null,
+                    _this2.disPlay(st2)
+                );
+            };
+            var U1 = function U1() {
+                return React.createElement(
+                    'div',
+                    null,
+                    _this2.disPlay(st1)
+                );
+            };
             return React.createElement(
                 'div',
                 { 'class': 'middle_main' },
                 React.createElement(
                     'div',
                     { 'class': 'data_status1 bdc(Black) ml-5 mr-5 mt-2' },
-                    this.disPlay(this.state.data_status)
+                    React.createElement(Route, { path: '/bai-viet/5', component: U5 }),
+                    React.createElement(Route, { path: '/bai-viet/4', component: U4 }),
+                    React.createElement(Route, { path: '/bai-viet/3', component: U3 }),
+                    React.createElement(Route, { path: '/bai-viet/2', component: U2 }),
+                    React.createElement(Route, { path: '/bai-viet/1', component: U1 })
                 )
             );
         }
